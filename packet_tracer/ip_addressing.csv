@@ -1,0 +1,43 @@
+device_id,interface,ip_address,subnet_mask,cidr,gateway,vlan_id,network_type,description
+HQ-R1,Gig0/0.10,10.10.10.1,255.255.255.0,/24,None,10,LAN,HQ Management Sub-interface
+HQ-R1,Gig0/0.20,10.10.20.1,255.255.255.0,/24,None,20,LAN,HQ Corporate Sub-interface
+HQ-R1,Gig0/0.30,10.10.30.1,255.255.255.0,/24,None,30,LAN,HQ DataCenter Sub-interface
+HQ-R1,Gig0/1,172.16.1.1,255.255.255.252,/30,None,None,WAN,HQ to BR1 WAN Link
+HQ-R1,Gig0/2,172.16.2.1,255.255.255.252,/30,None,None,WAN,HQ to BR2 WAN Link
+HQ-R1,Serial0/1/0,172.16.3.1,255.255.255.252,/30,None,None,WAN,HQ to BR3 WAN Link
+HQ-R1,Serial0/1/1,172.16.4.1,255.255.255.252,/30,None,None,WAN,HQ to BR4 WAN Link
+HQ-SW1,VLAN10,10.10.10.2,255.255.255.0,/24,10.10.10.1,10,Management,HQ Switch SVI
+HQ-SRV1,FastEthernet0,10.10.30.10,255.255.255.0,/24,10.10.30.1,30,LAN,HQ Central DNS and DHCP Server
+HQ-SRV2,FastEthernet0,10.10.30.20,255.255.255.0,/24,10.10.30.1,30,LAN,HQ Web and Application Server
+HQ-PC1,FastEthernet0,10.10.10.50,255.255.255.0,/24,10.10.10.1,10,LAN,HQ Admin Workstation
+HQ-PC2,FastEthernet0,10.10.20.50,255.255.255.0,/24,10.10.20.1,20,LAN,HQ Operations Workstation
+BR1-R1,Gig0/0.110,10.20.10.1,255.255.255.0,/24,None,110,LAN,BR1 Office Sub-interface
+BR1-R1,Gig0/0.120,10.20.20.1,255.255.255.0,/24,None,120,LAN,BR1 Guest/IoT Sub-interface
+BR1-R1,Gig0/1,172.16.1.2,255.255.255.252,/30,None,None,WAN,BR1 to HQ WAN Link
+BR1-R1,Gig0/2,172.16.12.1,255.255.255.252,/30,None,None,WAN,BR1 to BR2 Redundant Link
+BR1-SW1,VLAN110,10.20.10.2,255.255.255.0,/24,10.20.10.1,110,Management,BR1 Switch SVI
+BR1-PC1,FastEthernet0,10.20.10.50,255.255.255.0,/24,10.20.10.1,110,LAN,BR1 Staff PC
+BR1-PC2,FastEthernet0,10.20.20.50,255.255.255.0,/24,10.20.20.1,120,LAN,BR1 IoT PC
+BR2-R1,Gig0/0.210,10.30.10.1,255.255.255.0,/24,None,210,LAN,BR2 Engineering Sub-interface
+BR2-R1,Gig0/0.220,10.30.20.1,255.255.255.0,/24,None,220,LAN,BR2 Lab Sub-interface
+BR2-R1,Gig0/1,172.16.2.2,255.255.255.252,/30,None,None,WAN,BR2 to HQ WAN Link
+BR2-R1,Gig0/2,172.16.12.2,255.255.255.252,/30,None,None,WAN,BR2 to BR1 Redundant Link
+BR2-R1,Serial0/1/0,172.16.23.1,255.255.255.252,/30,None,None,WAN,BR2 to BR3 Cross-Ring Link
+BR2-SW1,VLAN210,10.30.10.2,255.255.255.0,/24,10.30.10.1,210,Management,BR2 Switch SVI
+BR2-PC1,FastEthernet0,10.30.10.50,255.255.255.0,/24,10.30.10.1,210,LAN,BR2 Engineering PC
+BR2-PC2,FastEthernet0,10.30.20.50,255.255.255.0,/24,10.30.20.1,220,LAN,BR2 Lab Testbed PC
+BR3-R1,Gig0/0.310,10.40.10.1,255.255.255.0,/24,None,310,LAN,BR3 Sales Sub-interface
+BR3-R1,Gig0/0.320,10.40.20.1,255.255.255.0,/24,None,320,LAN,BR3 Marketing Sub-interface
+BR3-R1,Serial0/1/0,172.16.3.2,255.255.255.252,/30,None,None,WAN,BR3 to HQ WAN Link
+BR3-R1,Serial0/1/1,172.16.23.2,255.255.255.252,/30,None,None,WAN,BR3 to BR2 Cross-Ring Link
+BR3-R1,Gig0/1,172.16.34.1,255.255.255.252,/30,None,None,WAN,BR3 to BR4 Redundant Link
+BR3-SW1,VLAN310,10.40.10.2,255.255.255.0,/24,10.40.10.1,310,Management,BR3 Switch SVI
+BR3-PC1,FastEthernet0,10.40.10.50,255.255.255.0,/24,10.40.10.1,310,LAN,BR3 Sales PC
+BR3-PC2,FastEthernet0,10.40.20.50,255.255.255.0,/24,10.40.20.1,320,LAN,BR3 Marketing PC
+BR4-R1,Gig0/0.410,10.50.10.1,255.255.255.0,/24,None,410,LAN,BR4 Logistics Sub-interface
+BR4-R1,Gig0/0.420,10.50.20.1,255.255.255.0,/24,None,420,LAN,BR4 Support Sub-interface
+BR4-R1,Serial0/1/0,172.16.4.2,255.255.255.252,/30,None,None,WAN,BR4 to HQ WAN Link
+BR4-R1,Gig0/1,172.16.34.2,255.255.255.252,/30,None,None,WAN,BR4 to BR3 Redundant Link
+BR4-SW1,VLAN410,10.50.10.2,255.255.255.0,/24,10.50.10.1,410,Management,BR4 Switch SVI
+BR4-PC1,FastEthernet0,10.50.10.50,255.255.255.0,/24,10.50.10.1,410,LAN,BR4 Logistics PC
+BR4-PC2,FastEthernet0,10.50.20.50,255.255.255.0,/24,10.50.20.1,420,LAN,BR4 Support PC

@@ -1,0 +1,907 @@
+{
+  "metadata": {
+    "network_name": "Enterprise Five-Branch Network",
+    "version": "1.0.0",
+    "status": "verified_design",
+    "description": "Enterprise network topology connecting Headquarters and four remote branches with redundant WAN links for AI Digital Twin failure prediction and recovery analysis.",
+    "total_devices": 22,
+    "total_links": 24,
+    "branches": [
+      "Headquarters",
+      "Branch 1 (North)",
+      "Branch 2 (South)",
+      "Branch 3 (East)",
+      "Branch 4 (West)"
+    ]
+  },
+  "devices": [
+    {
+      "device_id": "HQ-R1",
+      "hostname": "HQ-Router",
+      "device_type": "Router",
+      "branch": "Headquarters",
+      "role": "Core Gateway",
+      "model": "Cisco 2911",
+      "management_ip": "10.10.10.1",
+      "vlans": [10, 20, 30],
+      "interfaces": [
+        {
+          "name": "Gig0/0.10",
+          "ip_address": "10.10.10.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.10.0/24",
+          "vlan_id": 10
+        },
+        {
+          "name": "Gig0/0.20",
+          "ip_address": "10.10.20.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.20.0/24",
+          "vlan_id": 20
+        },
+        {
+          "name": "Gig0/0.30",
+          "ip_address": "10.10.30.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.30.0/24",
+          "vlan_id": 30
+        },
+        {
+          "name": "Gig0/1",
+          "ip_address": "172.16.1.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.1.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Gig0/2",
+          "ip_address": "172.16.2.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.2.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Serial0/1/0",
+          "ip_address": "172.16.3.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.3.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Serial0/1/1",
+          "ip_address": "172.16.4.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.4.0/30",
+          "vlan_id": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "HQ-SW1",
+      "hostname": "HQ-Switch",
+      "device_type": "Switch",
+      "branch": "Headquarters",
+      "role": "Distribution Switch",
+      "model": "Cisco Catalyst 2960-24TT",
+      "management_ip": "10.10.10.2",
+      "vlans": [10, 20, 30],
+      "interfaces": [
+        { "name": "Gig0/1", "vlan_id": null, "mode": "Trunk" },
+        { "name": "Fast0/1", "vlan_id": 10, "mode": "Access" },
+        { "name": "Fast0/2", "vlan_id": 20, "mode": "Access" },
+        { "name": "Fast0/3", "vlan_id": 30, "mode": "Access" },
+        { "name": "Fast0/4", "vlan_id": 30, "mode": "Access" }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "HQ-SRV1",
+      "hostname": "HQ-DNS-DHCP",
+      "device_type": "Server",
+      "branch": "Headquarters",
+      "role": "Central DNS and DHCP Server",
+      "model": "Generic Server-PT",
+      "management_ip": "10.10.30.10",
+      "vlans": [30],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.10.30.10",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.30.0/24",
+          "gateway": "10.10.30.1",
+          "vlan_id": 30
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "HQ-SRV2",
+      "hostname": "HQ-AppServer",
+      "device_type": "Server",
+      "branch": "Headquarters",
+      "role": "Web and Application Server",
+      "model": "Generic Server-PT",
+      "management_ip": "10.10.30.20",
+      "vlans": [30],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.10.30.20",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.30.0/24",
+          "gateway": "10.10.30.1",
+          "vlan_id": 30
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "HQ-PC1",
+      "hostname": "HQ-AdminPC",
+      "device_type": "PC",
+      "branch": "Headquarters",
+      "role": "IT Admin Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.10.10.50",
+      "vlans": [10],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.10.10.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.10.0/24",
+          "gateway": "10.10.10.1",
+          "vlan_id": 10
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "HQ-PC2",
+      "hostname": "HQ-OpsPC",
+      "device_type": "PC",
+      "branch": "Headquarters",
+      "role": "Corporate Operations PC",
+      "model": "Generic PC-PT",
+      "management_ip": "10.10.20.50",
+      "vlans": [20],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.10.20.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.10.20.0/24",
+          "gateway": "10.10.20.1",
+          "vlan_id": 20
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR1-R1",
+      "hostname": "BR1-Router",
+      "device_type": "Router",
+      "branch": "Branch 1 (North)",
+      "role": "Branch Gateway",
+      "model": "Cisco 2911",
+      "management_ip": "10.20.10.1",
+      "vlans": [110, 120],
+      "interfaces": [
+        {
+          "name": "Gig0/0.110",
+          "ip_address": "10.20.10.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.20.10.0/24",
+          "vlan_id": 110
+        },
+        {
+          "name": "Gig0/0.120",
+          "ip_address": "10.20.20.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.20.20.0/24",
+          "vlan_id": 120
+        },
+        {
+          "name": "Gig0/1",
+          "ip_address": "172.16.1.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.1.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Gig0/2",
+          "ip_address": "172.16.12.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.12.0/30",
+          "vlan_id": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR1-SW1",
+      "hostname": "BR1-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 1 (North)",
+      "role": "Branch Access Switch",
+      "model": "Cisco Catalyst 2960-24TT",
+      "management_ip": "10.20.10.2",
+      "vlans": [110, 120],
+      "interfaces": [
+        { "name": "Gig0/1", "vlan_id": null, "mode": "Trunk" },
+        { "name": "Fast0/1", "vlan_id": 110, "mode": "Access" },
+        { "name": "Fast0/2", "vlan_id": 120, "mode": "Access" }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR1-PC1",
+      "hostname": "BR1-Staff1",
+      "device_type": "PC",
+      "branch": "Branch 1 (North)",
+      "role": "Staff Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.20.10.50",
+      "vlans": [110],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.20.10.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.20.10.0/24",
+          "gateway": "10.20.10.1",
+          "vlan_id": 110
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR1-PC2",
+      "hostname": "BR1-Staff2",
+      "device_type": "PC",
+      "branch": "Branch 1 (North)",
+      "role": "Operations IoT Terminal",
+      "model": "Generic PC-PT",
+      "management_ip": "10.20.20.50",
+      "vlans": [120],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.20.20.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.20.20.0/24",
+          "gateway": "10.20.20.1",
+          "vlan_id": 120
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR2-R1",
+      "hostname": "BR2-Router",
+      "device_type": "Router",
+      "branch": "Branch 2 (South)",
+      "role": "Branch Gateway",
+      "model": "Cisco 2911",
+      "management_ip": "10.30.10.1",
+      "vlans": [210, 220],
+      "interfaces": [
+        {
+          "name": "Gig0/0.210",
+          "ip_address": "10.30.10.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.30.10.0/24",
+          "vlan_id": 210
+        },
+        {
+          "name": "Gig0/0.220",
+          "ip_address": "10.30.20.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.30.20.0/24",
+          "vlan_id": 220
+        },
+        {
+          "name": "Gig0/1",
+          "ip_address": "172.16.2.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.2.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Gig0/2",
+          "ip_address": "172.16.12.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.12.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Serial0/1/0",
+          "ip_address": "172.16.23.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.23.0/30",
+          "vlan_id": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR2-SW1",
+      "hostname": "BR2-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 2 (South)",
+      "role": "Branch Access Switch",
+      "model": "Cisco Catalyst 2960-24TT",
+      "management_ip": "10.30.10.2",
+      "vlans": [210, 220],
+      "interfaces": [
+        { "name": "Gig0/1", "vlan_id": null, "mode": "Trunk" },
+        { "name": "Fast0/1", "vlan_id": 210, "mode": "Access" },
+        { "name": "Fast0/2", "vlan_id": 220, "mode": "Access" }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR2-PC1",
+      "hostname": "BR2-Eng1",
+      "device_type": "PC",
+      "branch": "Branch 2 (South)",
+      "role": "Engineering Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.30.10.50",
+      "vlans": [210],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.30.10.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.30.10.0/24",
+          "gateway": "10.30.10.1",
+          "vlan_id": 210
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR2-PC2",
+      "hostname": "BR2-Lab1",
+      "device_type": "PC",
+      "branch": "Branch 2 (South)",
+      "role": "R&D Testbed PC",
+      "model": "Generic PC-PT",
+      "management_ip": "10.30.20.50",
+      "vlans": [220],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.30.20.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.30.20.0/24",
+          "gateway": "10.30.20.1",
+          "vlan_id": 220
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR3-R1",
+      "hostname": "BR3-Router",
+      "device_type": "Router",
+      "branch": "Branch 3 (East)",
+      "role": "Branch Gateway",
+      "model": "Cisco 2911",
+      "management_ip": "10.40.10.1",
+      "vlans": [310, 320],
+      "interfaces": [
+        {
+          "name": "Gig0/0.310",
+          "ip_address": "10.40.10.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.40.10.0/24",
+          "vlan_id": 310
+        },
+        {
+          "name": "Gig0/0.320",
+          "ip_address": "10.40.20.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.40.20.0/24",
+          "vlan_id": 320
+        },
+        {
+          "name": "Serial0/1/0",
+          "ip_address": "172.16.3.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.3.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Serial0/1/1",
+          "ip_address": "172.16.23.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.23.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Gig0/1",
+          "ip_address": "172.16.34.1",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.34.0/30",
+          "vlan_id": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR3-SW1",
+      "hostname": "BR3-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 3 (East)",
+      "role": "Branch Access Switch",
+      "model": "Cisco Catalyst 2960-24TT",
+      "management_ip": "10.40.10.2",
+      "vlans": [310, 320],
+      "interfaces": [
+        { "name": "Gig0/1", "vlan_id": null, "mode": "Trunk" },
+        { "name": "Fast0/1", "vlan_id": 310, "mode": "Access" },
+        { "name": "Fast0/2", "vlan_id": 320, "mode": "Access" }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR3-PC1",
+      "hostname": "BR3-Sales1",
+      "device_type": "PC",
+      "branch": "Branch 3 (East)",
+      "role": "Sales Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.40.10.50",
+      "vlans": [310],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.40.10.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.40.10.0/24",
+          "gateway": "10.40.10.1",
+          "vlan_id": 310
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR3-PC2",
+      "hostname": "BR3-Mkt1",
+      "device_type": "PC",
+      "branch": "Branch 3 (East)",
+      "role": "Marketing Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.40.20.50",
+      "vlans": [320],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.40.20.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.40.20.0/24",
+          "gateway": "10.40.20.1",
+          "vlan_id": 320
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR4-R1",
+      "hostname": "BR4-Router",
+      "device_type": "Router",
+      "branch": "Branch 4 (West)",
+      "role": "Branch Gateway",
+      "model": "Cisco 2911",
+      "management_ip": "10.50.10.1",
+      "vlans": [410, 420],
+      "interfaces": [
+        {
+          "name": "Gig0/0.410",
+          "ip_address": "10.50.10.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.50.10.0/24",
+          "vlan_id": 410
+        },
+        {
+          "name": "Gig0/0.420",
+          "ip_address": "10.50.20.1",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.50.20.0/24",
+          "vlan_id": 420
+        },
+        {
+          "name": "Serial0/1/0",
+          "ip_address": "172.16.4.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.4.0/30",
+          "vlan_id": null
+        },
+        {
+          "name": "Gig0/1",
+          "ip_address": "172.16.34.2",
+          "subnet_mask": "255.255.255.252",
+          "cidr": "172.16.34.0/30",
+          "vlan_id": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR4-SW1",
+      "hostname": "BR4-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 4 (West)",
+      "role": "Branch Access Switch",
+      "model": "Cisco Catalyst 2960-24TT",
+      "management_ip": "10.50.10.2",
+      "vlans": [410, 420],
+      "interfaces": [
+        { "name": "Gig0/1", "vlan_id": null, "mode": "Trunk" },
+        { "name": "Fast0/1", "vlan_id": 410, "mode": "Access" },
+        { "name": "Fast0/2", "vlan_id": 420, "mode": "Access" }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR4-PC1",
+      "hostname": "BR4-Log1",
+      "device_type": "PC",
+      "branch": "Branch 4 (West)",
+      "role": "Logistics Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.50.10.50",
+      "vlans": [410],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.50.10.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.50.10.0/24",
+          "gateway": "10.50.10.1",
+          "vlan_id": 410
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "device_id": "BR4-PC2",
+      "hostname": "BR4-Supp1",
+      "device_type": "PC",
+      "branch": "Branch 4 (West)",
+      "role": "Support Workstation",
+      "model": "Generic PC-PT",
+      "management_ip": "10.50.20.50",
+      "vlans": [420],
+      "interfaces": [
+        {
+          "name": "FastEthernet0",
+          "ip_address": "10.50.20.50",
+          "subnet_mask": "255.255.255.0",
+          "cidr": "10.50.20.0/24",
+          "gateway": "10.50.20.1",
+          "vlan_id": 420
+        }
+      ],
+      "status": "active"
+    }
+  ],
+  "links": [
+    {
+      "link_id": "LINK-HQ-SW1",
+      "source_device": "HQ-R1",
+      "source_interface": "Gig0/0",
+      "target_device": "HQ-SW1",
+      "target_interface": "Gig0/1",
+      "link_type": "Trunk",
+      "media": "Copper Straight-Through",
+      "subnet": null,
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Distribution Trunk"
+    },
+    {
+      "link_id": "LINK-HQ-PC1",
+      "source_device": "HQ-SW1",
+      "source_interface": "Fast0/1",
+      "target_device": "HQ-PC1",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.10.10.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 10)"
+    },
+    {
+      "link_id": "LINK-HQ-PC2",
+      "source_device": "HQ-SW1",
+      "source_interface": "Fast0/2",
+      "target_device": "HQ-PC2",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.10.20.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 20)"
+    },
+    {
+      "link_id": "LINK-HQ-SRV1",
+      "source_device": "HQ-SW1",
+      "source_interface": "Fast0/3",
+      "target_device": "HQ-SRV1",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.10.30.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Server Access (VLAN 30)"
+    },
+    {
+      "link_id": "LINK-HQ-SRV2",
+      "source_device": "HQ-SW1",
+      "source_interface": "Fast0/4",
+      "target_device": "HQ-SRV2",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.10.30.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Server Access (VLAN 30)"
+    },
+    {
+      "link_id": "LINK-BR1-SW1",
+      "source_device": "BR1-R1",
+      "source_interface": "Gig0/0",
+      "target_device": "BR1-SW1",
+      "target_interface": "Gig0/1",
+      "link_type": "Trunk",
+      "media": "Copper Straight-Through",
+      "subnet": null,
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Distribution Trunk"
+    },
+    {
+      "link_id": "LINK-BR1-PC1",
+      "source_device": "BR1-SW1",
+      "source_interface": "Fast0/1",
+      "target_device": "BR1-PC1",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.20.10.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 110)"
+    },
+    {
+      "link_id": "LINK-BR1-PC2",
+      "source_device": "BR1-SW1",
+      "source_interface": "Fast0/2",
+      "target_device": "BR1-PC2",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.20.20.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 120)"
+    },
+    {
+      "link_id": "LINK-BR2-SW1",
+      "source_device": "BR2-R1",
+      "source_interface": "Gig0/0",
+      "target_device": "BR2-SW1",
+      "target_interface": "Gig0/1",
+      "link_type": "Trunk",
+      "media": "Copper Straight-Through",
+      "subnet": null,
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Distribution Trunk"
+    },
+    {
+      "link_id": "LINK-BR2-PC1",
+      "source_device": "BR2-SW1",
+      "source_interface": "Fast0/1",
+      "target_device": "BR2-PC1",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.30.10.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 210)"
+    },
+    {
+      "link_id": "LINK-BR2-PC2",
+      "source_device": "BR2-SW1",
+      "source_interface": "Fast0/2",
+      "target_device": "BR2-PC2",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.30.20.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 220)"
+    },
+    {
+      "link_id": "LINK-BR3-SW1",
+      "source_device": "BR3-R1",
+      "source_interface": "Gig0/0",
+      "target_device": "BR3-SW1",
+      "target_interface": "Gig0/1",
+      "link_type": "Trunk",
+      "media": "Copper Straight-Through",
+      "subnet": null,
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Distribution Trunk"
+    },
+    {
+      "link_id": "LINK-BR3-PC1",
+      "source_device": "BR3-SW1",
+      "source_interface": "Fast0/1",
+      "target_device": "BR3-PC1",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.40.10.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 310)"
+    },
+    {
+      "link_id": "LINK-BR3-PC2",
+      "source_device": "BR3-SW1",
+      "source_interface": "Fast0/2",
+      "target_device": "BR3-PC2",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.40.20.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 320)"
+    },
+    {
+      "link_id": "LINK-BR4-SW1",
+      "source_device": "BR4-R1",
+      "source_interface": "Gig0/0",
+      "target_device": "BR4-SW1",
+      "target_interface": "Gig0/1",
+      "link_type": "Trunk",
+      "media": "Copper Straight-Through",
+      "subnet": null,
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Distribution Trunk"
+    },
+    {
+      "link_id": "LINK-BR4-PC1",
+      "source_device": "BR4-SW1",
+      "source_interface": "Fast0/1",
+      "target_device": "BR4-PC1",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.50.10.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 410)"
+    },
+    {
+      "link_id": "LINK-BR4-PC2",
+      "source_device": "BR4-SW1",
+      "source_interface": "Fast0/2",
+      "target_device": "BR4-PC2",
+      "target_interface": "FastEthernet0",
+      "link_type": "Access",
+      "media": "Copper Straight-Through",
+      "subnet": "10.50.20.0/24",
+      "bandwidth_mbps": 100,
+      "status": "up",
+      "role": "Host Access (VLAN 420)"
+    },
+    {
+      "link_id": "WAN-HQ-BR1",
+      "source_device": "HQ-R1",
+      "source_interface": "Gig0/1",
+      "target_device": "BR1-R1",
+      "target_interface": "Gig0/1",
+      "link_type": "WAN",
+      "media": "Copper Cross-Over",
+      "subnet": "172.16.1.0/30",
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Primary Hub-Spoke WAN"
+    },
+    {
+      "link_id": "WAN-HQ-BR2",
+      "source_device": "HQ-R1",
+      "source_interface": "Gig0/2",
+      "target_device": "BR2-R1",
+      "target_interface": "Gig0/1",
+      "link_type": "WAN",
+      "media": "Copper Cross-Over",
+      "subnet": "172.16.2.0/30",
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Primary Hub-Spoke WAN"
+    },
+    {
+      "link_id": "WAN-HQ-BR3",
+      "source_device": "HQ-R1",
+      "source_interface": "Serial0/1/0",
+      "target_device": "BR3-R1",
+      "target_interface": "Serial0/1/0",
+      "link_type": "WAN",
+      "media": "Serial DCE/DTE",
+      "subnet": "172.16.3.0/30",
+      "bandwidth_mbps": 1544,
+      "status": "up",
+      "role": "Primary Hub-Spoke WAN"
+    },
+    {
+      "link_id": "WAN-HQ-BR4",
+      "source_device": "HQ-R1",
+      "source_interface": "Serial0/1/1",
+      "target_device": "BR4-R1",
+      "target_interface": "Serial0/1/0",
+      "link_type": "WAN",
+      "media": "Serial DCE/DTE",
+      "subnet": "172.16.4.0/30",
+      "bandwidth_mbps": 1544,
+      "status": "up",
+      "role": "Primary Hub-Spoke WAN"
+    },
+    {
+      "link_id": "WAN-BR1-BR2",
+      "source_device": "BR1-R1",
+      "source_interface": "Gig0/2",
+      "target_device": "BR2-R1",
+      "target_interface": "Gig0/2",
+      "link_type": "WAN",
+      "media": "Copper Cross-Over",
+      "subnet": "172.16.12.0/30",
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Redundant Inter-Branch (North-South)"
+    },
+    {
+      "link_id": "WAN-BR2-BR3",
+      "source_device": "BR2-R1",
+      "source_interface": "Serial0/1/0",
+      "target_device": "BR3-R1",
+      "target_interface": "Serial0/1/1",
+      "link_type": "WAN",
+      "media": "Serial DCE/DTE",
+      "subnet": "172.16.23.0/30",
+      "bandwidth_mbps": 1544,
+      "status": "up",
+      "role": "Redundant Cross-Tie (South-East Ring)"
+    },
+    {
+      "link_id": "WAN-BR3-BR4",
+      "source_device": "BR3-R1",
+      "source_interface": "Gig0/1",
+      "target_device": "BR4-R1",
+      "target_interface": "Gig0/1",
+      "link_type": "WAN",
+      "media": "Copper Cross-Over",
+      "subnet": "172.16.34.0/30",
+      "bandwidth_mbps": 1000,
+      "status": "up",
+      "role": "Redundant Inter-Branch (East-West)"
+    }
+  ]
+}

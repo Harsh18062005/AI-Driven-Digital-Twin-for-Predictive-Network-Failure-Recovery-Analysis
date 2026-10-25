@@ -1,0 +1,23 @@
+device_id,hostname,device_type,branch,role,model,management_ip,vlans,interfaces,status
+HQ-R1,HQ-Router,Router,Headquarters,Core Gateway,Cisco 2911,10.10.10.1,"10,20,30","Gig0/0,Gig0/1,Gig0/2,Serial0/1/0,Serial0/1/1",active
+HQ-SW1,HQ-Switch,Switch,Headquarters,Distribution Switch,Cisco 2960-24TT,10.10.10.2,"10,20,30","Gig0/1,Fast0/1,Fast0/2,Fast0/3,Fast0/4",active
+HQ-SRV1,HQ-DNS-DHCP,Server,Headquarters,Central DNS/DHCP,Generic Server-PT,10.10.30.10,30,FastEthernet0,active
+HQ-SRV2,HQ-AppServer,Server,Headquarters,Web/Application Server,Generic Server-PT,10.10.30.20,30,FastEthernet0,active
+HQ-PC1,HQ-AdminPC,PC,Headquarters,IT Admin Workstation,Generic PC-PT,10.10.10.50,10,FastEthernet0,active
+HQ-PC2,HQ-OpsPC,PC,Headquarters,Corporate Operations PC,Generic PC-PT,10.10.20.50,20,FastEthernet0,active
+BR1-R1,BR1-Router,Router,Branch 1 (North),Branch Gateway,Cisco 2911,10.20.10.1,"110,120","Gig0/0,Gig0/1,Gig0/2",active
+BR1-SW1,BR1-Switch,Switch,Branch 1 (North),Branch Access Switch,Cisco 2960-24TT,10.20.10.2,"110,120","Gig0/1,Fast0/1,Fast0/2",active
+BR1-PC1,BR1-Staff1,PC,Branch 1 (North),Staff Workstation,Generic PC-PT,10.20.10.50,110,FastEthernet0,active
+BR1-PC2,BR1-Staff2,PC,Branch 1 (North),Operations IoT Terminal,Generic PC-PT,10.20.20.50,120,FastEthernet0,active
+BR2-R1,BR2-Router,Router,Branch 2 (South),Branch Gateway,Cisco 2911,10.30.10.1,"210,220","Gig0/0,Gig0/1,Gig0/2,Serial0/1/0",active
+BR2-SW1,BR2-Switch,Switch,Branch 2 (South),Branch Access Switch,Cisco 2960-24TT,10.30.10.2,"210,220","Gig0/1,Fast0/1,Fast0/2",active
+BR2-PC1,BR2-Eng1,PC,Branch 2 (South),Engineering Workstation,Generic PC-PT,10.30.10.50,210,FastEthernet0,active
+BR2-PC2,BR2-Lab1,PC,Branch 2 (South),R&D Testbed PC,Generic PC-PT,10.30.20.50,220,FastEthernet0,active
+BR3-R1,BR3-Router,Router,Branch 3 (East),Branch Gateway,Cisco 2911,10.40.10.1,"310,320","Gig0/0,Gig0/1,Serial0/1/0,Serial0/1/1",active
+BR3-SW1,BR3-Switch,Switch,Branch 3 (East),Branch Access Switch,Cisco 2960-24TT,10.40.10.2,"310,320","Gig0/1,Fast0/1,Fast0/2",active
+BR3-PC1,BR3-Sales1,PC,Branch 3 (East),Sales Workstation,Generic PC-PT,10.40.10.50,310,FastEthernet0,active
+BR3-PC2,BR3-Mkt1,PC,Branch 3 (East),Marketing Workstation,Generic PC-PT,10.40.20.50,320,FastEthernet0,active
+BR4-R1,BR4-Router,Router,Branch 4 (West),Branch Gateway,Cisco 2911,10.50.10.1,"410,420","Gig0/0,Gig0/1,Serial0/1/0",active
+BR4-SW1,BR4-Switch,Switch,Branch 4 (West),Branch Access Switch,Cisco 2960-24TT,10.50.10.2,"410,420","Gig0/1,Fast0/1,Fast0/2",active
+BR4-PC1,BR4-Log1,PC,Branch 4 (West),Logistics Workstation,Generic PC-PT,10.50.10.50,410,FastEthernet0,active
+BR4-PC2,BR4-Supp1,PC,Branch 4 (West),Support Workstation,Generic PC-PT,10.50.20.50,420,FastEthernet0,active

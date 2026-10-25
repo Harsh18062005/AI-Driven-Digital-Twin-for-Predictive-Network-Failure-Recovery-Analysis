@@ -1,0 +1,25 @@
+link_id,source_device,source_interface,target_device,target_interface,link_type,media,subnet,bandwidth_mbps,status,role
+LINK-HQ-SW1,HQ-R1,Gig0/0,HQ-SW1,Gig0/1,Trunk,Copper Straight-Through,None,1000,up,Distribution Trunk
+LINK-HQ-PC1,HQ-SW1,Fast0/1,HQ-PC1,FastEthernet0,Access,Copper Straight-Through,10.10.10.0/24,100,up,Host Access (VLAN 10)
+LINK-HQ-PC2,HQ-SW1,Fast0/2,HQ-PC2,FastEthernet0,Access,Copper Straight-Through,10.10.20.0/24,100,up,Host Access (VLAN 20)
+LINK-HQ-SRV1,HQ-SW1,Fast0/3,HQ-SRV1,FastEthernet0,Access,Copper Straight-Through,10.10.30.0/24,100,up,Server Access (VLAN 30)
+LINK-HQ-SRV2,HQ-SW1,Fast0/4,HQ-SRV2,FastEthernet0,Access,Copper Straight-Through,10.10.30.0/24,100,up,Server Access (VLAN 30)
+LINK-BR1-SW1,BR1-R1,Gig0/0,BR1-SW1,Gig0/1,Trunk,Copper Straight-Through,None,1000,up,Distribution Trunk
+LINK-BR1-PC1,BR1-SW1,Fast0/1,BR1-PC1,FastEthernet0,Access,Copper Straight-Through,10.20.10.0/24,100,up,Host Access (VLAN 110)
+LINK-BR1-PC2,BR1-SW1,Fast0/2,BR1-PC2,FastEthernet0,Access,Copper Straight-Through,10.20.20.0/24,100,up,Host Access (VLAN 120)
+LINK-BR2-SW1,BR2-R1,Gig0/0,BR2-SW1,Gig0/1,Trunk,Copper Straight-Through,None,1000,up,Distribution Trunk
+LINK-BR2-PC1,BR2-SW1,Fast0/1,BR2-PC1,FastEthernet0,Access,Copper Straight-Through,10.30.10.0/24,100,up,Host Access (VLAN 210)
+LINK-BR2-PC2,BR2-SW1,Fast0/2,BR2-PC2,FastEthernet0,Access,Copper Straight-Through,10.30.20.0/24,100,up,Host Access (VLAN 220)
+LINK-BR3-SW1,BR3-R1,Gig0/0,BR3-SW1,Gig0/1,Trunk,Copper Straight-Through,None,1000,up,Distribution Trunk
+LINK-BR3-PC1,BR3-SW1,Fast0/1,BR3-PC1,FastEthernet0,Access,Copper Straight-Through,10.40.10.0/24,100,up,Host Access (VLAN 310)
+LINK-BR3-PC2,BR3-SW1,Fast0/2,BR3-PC2,FastEthernet0,Access,Copper Straight-Through,10.40.20.0/24,100,up,Host Access (VLAN 320)
+LINK-BR4-SW1,BR4-R1,Gig0/0,BR4-SW1,Gig0/1,Trunk,Copper Straight-Through,None,1000,up,Distribution Trunk
+LINK-BR4-PC1,BR4-SW1,Fast0/1,BR4-PC1,FastEthernet0,Access,Copper Straight-Through,10.50.10.0/24,100,up,Host Access (VLAN 410)
+LINK-BR4-PC2,BR4-SW1,Fast0/2,BR4-PC2,FastEthernet0,Access,Copper Straight-Through,10.50.20.0/24,100,up,Host Access (VLAN 420)
+WAN-HQ-BR1,HQ-R1,Gig0/1,BR1-R1,Gig0/1,WAN,Copper Cross-Over,172.16.1.0/30,1000,up,Primary Hub-Spoke WAN
+WAN-HQ-BR2,HQ-R1,Gig0/2,BR2-R1,Gig0/1,WAN,Copper Cross-Over,172.16.2.0/30,1000,up,Primary Hub-Spoke WAN
+WAN-HQ-BR3,HQ-R1,Serial0/1/0,BR3-R1,Serial0/1/0,WAN,Serial DCE/DTE,172.16.3.0/30,1544,up,Primary Hub-Spoke WAN
+WAN-HQ-BR4,HQ-R1,Serial0/1/1,BR4-R1,Serial0/1/0,WAN,Serial DCE/DTE,172.16.4.0/30,1544,up,Primary Hub-Spoke WAN
+WAN-BR1-BR2,BR1-R1,Gig0/2,BR2-R1,Gig0/2,WAN,Copper Cross-Over,172.16.12.0/30,1000,up,Redundant Inter-Branch (North-South)
+WAN-BR2-BR3,BR2-R1,Serial0/1/0,BR3-R1,Serial0/1/1,WAN,Serial DCE/DTE,172.16.23.0/30,1544,up,Redundant Cross-Tie (South-East Ring)
+WAN-BR3-BR4,BR3-R1,Gig0/1,BR4-R1,Gig0/1,WAN,Copper Cross-Over,172.16.34.0/30,1000,up,Redundant Inter-Branch (East-West)

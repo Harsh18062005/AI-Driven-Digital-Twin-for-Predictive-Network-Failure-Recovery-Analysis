@@ -1,0 +1,188 @@
+{
+  "trained_at": "2026-10-25T22:37:36.074503",
+  "models": {
+    "link_failure_classifier": {
+      "model_type": "RandomForest",
+      "artifact": "link_failure_model.joblib",
+      "features": [
+        "bandwidth_mbps",
+        "edge_betweenness",
+        "source_degree",
+        "target_degree",
+        "min_endpoint_degree",
+        "is_bridge",
+        "alternate_path_exists",
+        "alternate_path_hops",
+        "redundancy_factor",
+        "packet_loss_pct",
+        "latency_ms",
+        "jitter_ms",
+        "utilization_pct",
+        "error_rate",
+        "queue_depth_pct",
+        "congestion_index"
+      ],
+      "metrics": {
+        "cv_f1_mean": 1.0,
+        "cv_f1_std": 0.0,
+        "test_f1": 1.0,
+        "test_accuracy": 1.0,
+        "test_precision": 1.0,
+        "test_recall": 1.0,
+        "test_roc_auc": 1.0
+      },
+      "confusion_matrix": [
+        [
+          579,
+          0
+        ],
+        [
+          0,
+          141
+        ]
+      ],
+      "feature_importance": {
+        "packet_loss_pct": 0.2859092563643455,
+        "congestion_index": 0.21208798113911093,
+        "jitter_ms": 0.1943359967008297,
+        "error_rate": 0.12339127982271147,
+        "latency_ms": 0.10207972053136476,
+        "queue_depth_pct": 0.0641914724061302,
+        "utilization_pct": 0.017858566437772127,
+        "edge_betweenness": 7.138677694509163e-05,
+        "source_degree": 4.5740616559738e-05,
+        "bandwidth_mbps": 2.337450712082524e-05,
+        "min_endpoint_degree": 5.035780823075924e-06,
+        "redundancy_factor": 1.700540340439081e-07,
+        "alternate_path_hops": 1.886225251083801e-08,
+        "target_degree": 0.0,
+        "is_bridge": 0.0,
+        "alternate_path_exists": 0.0
+      }
+    },
+    "device_health_classifier": {
+      "model_type": "RandomForestClassifier",
+      "artifact": "device_failure_model.joblib",
+      "features": [
+        "degree",
+        "degree_centrality",
+        "betweenness_centrality",
+        "closeness_centrality",
+        "eigenvector_centrality",
+        "is_articulation_point",
+        "is_router",
+        "is_switch",
+        "is_server",
+        "blast_radius_potential",
+        "cpu_pct",
+        "mem_pct",
+        "temperature_c",
+        "interface_error_count",
+        "buffer_utilization_pct",
+        "device_stress_score"
+      ],
+      "classes": [
+        "HEALTHY",
+        "WARNING",
+        "CRITICAL"
+      ],
+      "metrics": {
+        "cv_f1_weighted_mean": 1.0,
+        "cv_f1_weighted_std": 0.0,
+        "test_accuracy": 1.0,
+        "test_f1_weighted": 1.0
+      },
+      "confusion_matrix": [
+        [
+          493,
+          0,
+          0
+        ],
+        [
+          0,
+          103,
+          0
+        ],
+        [
+          0,
+          0,
+          64
+        ]
+      ],
+      "feature_importance": {
+        "device_stress_score": 0.2756517886427733,
+        "buffer_utilization_pct": 0.20210007797951898,
+        "cpu_pct": 0.17634579139935294,
+        "temperature_c": 0.16316682183028344,
+        "mem_pct": 0.10729546086302544,
+        "interface_error_count": 0.07416217951504425,
+        "blast_radius_potential": 0.0002848153655989791,
+        "eigenvector_centrality": 0.00022963195577242756,
+        "closeness_centrality": 0.0002281726699683955,
+        "betweenness_centrality": 0.0002146182554313562,
+        "degree_centrality": 0.00019668981810306126,
+        "degree": 6.458649741679967e-05,
+        "is_switch": 2.099818824532078e-05,
+        "is_articulation_point": 1.3260635300750231e-05,
+        "is_router": 1.2937465069876583e-05,
+        "is_server": 1.2168919094758824e-05
+      }
+    },
+    "blast_radius_regressor": {
+      "model_type": "GradientBoostingRegressor",
+      "artifact": "blast_radius_model.joblib",
+      "features": [
+        "degree",
+        "degree_centrality",
+        "betweenness_centrality",
+        "closeness_centrality",
+        "eigenvector_centrality",
+        "is_articulation_point",
+        "is_router",
+        "is_switch",
+        "is_server",
+        "blast_radius_potential",
+        "cpu_pct",
+        "mem_pct",
+        "temperature_c",
+        "interface_error_count",
+        "buffer_utilization_pct",
+        "device_stress_score"
+      ],
+      "metrics": {
+        "test_mae": 0.0007648774745366391,
+        "test_rmse": 0.005813487394399217,
+        "test_r2": 0.9999196631150481
+      }
+    },
+    "anomaly_detector": {
+      "model_type": "IsolationForest",
+      "artifact": "anomaly_detector.joblib",
+      "features": [
+        "packet_loss_pct",
+        "latency_ms",
+        "jitter_ms",
+        "utilization_pct",
+        "error_rate",
+        "queue_depth_pct"
+      ],
+      "contamination": 0.05,
+      "baseline_means": {
+        "packet_loss_pct": 0.08070511049723757,
+        "latency_ms": 7.7155870165745855,
+        "jitter_ms": 0.8006146408839778,
+        "utilization_pct": 50.98514157458563,
+        "error_rate": 0.022790055248618785,
+        "queue_depth_pct": 20.41336325966851
+      },
+      "baseline_stds": {
+        "packet_loss_pct": 0.0806853162851162,
+        "latency_ms": 11.464667654238038,
+        "jitter_ms": 0.7108992349544345,
+        "utilization_pct": 8.573165837907693,
+        "error_rate": 0.1515559557439025,
+        "queue_depth_pct": 4.53720300052762
+      }
+    }
+  }
+}

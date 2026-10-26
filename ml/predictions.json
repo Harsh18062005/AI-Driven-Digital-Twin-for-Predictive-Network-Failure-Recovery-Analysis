@@ -1,0 +1,2232 @@
+{
+  "network_name": "Enterprise Five-Branch Network",
+  "total_devices": 22,
+  "total_links": 24,
+  "overall_health_score": 100.0,
+  "kpis": {
+    "overall_network_health_score": 100.0,
+    "link_counts": {
+      "total": 24,
+      "healthy": 24,
+      "warning": 0,
+      "critical": 0
+    },
+    "device_counts": {
+      "total": 22,
+      "healthy": 22,
+      "warning": 0,
+      "critical": 0
+    },
+    "top_vulnerable_links": [
+      {
+        "link_id": "LINK-BR1-PC1",
+        "source_device": "BR1-SW1",
+        "target_device": "BR1-PC1",
+        "link_type": "Access",
+        "bandwidth_mbps": 100.0,
+        "failure_probability": 0.0,
+        "failure_predicted": false,
+        "risk_level": "LOW",
+        "health_score": 100.0,
+        "is_bridge": true,
+        "alternate_path_exists": false,
+        "alternate_path_hops": 99,
+        "risk_factors": [
+          "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+          "Zero Redundancy: No alternate path exists if link collapses"
+        ],
+        "anomaly_analysis": {
+          "is_anomaly": false,
+          "anomaly_confidence": 0.3142,
+          "raw_decision_score": 0.0086,
+          "deviant_features": [
+            {
+              "feature": "queue_depth_pct",
+              "observed": 10.0,
+              "baseline_mean": 20.41,
+              "z_score": -2.3
+            }
+          ],
+          "z_scores": {
+            "packet_loss_pct": -1.0,
+            "latency_ms": 0.9,
+            "jitter_ms": -0.42,
+            "utilization_pct": -1.86,
+            "error_rate": -0.15,
+            "queue_depth_pct": -2.3
+          }
+        },
+        "telemetry_snapshot": {
+          "packet_loss_pct": 0.0,
+          "latency_ms": 18.0,
+          "jitter_ms": 0.5,
+          "utilization_pct": 35.0,
+          "error_rate": 0.0,
+          "queue_depth_pct": 10.0,
+          "congestion_index": 0.175
+        }
+      },
+      {
+        "link_id": "LINK-BR1-PC2",
+        "source_device": "BR1-SW1",
+        "target_device": "BR1-PC2",
+        "link_type": "Access",
+        "bandwidth_mbps": 100.0,
+        "failure_probability": 0.0,
+        "failure_predicted": false,
+        "risk_level": "LOW",
+        "health_score": 100.0,
+        "is_bridge": true,
+        "alternate_path_exists": false,
+        "alternate_path_hops": 99,
+        "risk_factors": [
+          "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+          "Zero Redundancy: No alternate path exists if link collapses"
+        ],
+        "anomaly_analysis": {
+          "is_anomaly": false,
+          "anomaly_confidence": 0.3142,
+          "raw_decision_score": 0.0086,
+          "deviant_features": [
+            {
+              "feature": "queue_depth_pct",
+              "observed": 10.0,
+              "baseline_mean": 20.41,
+              "z_score": -2.3
+            }
+          ],
+          "z_scores": {
+            "packet_loss_pct": -1.0,
+            "latency_ms": 0.9,
+            "jitter_ms": -0.42,
+            "utilization_pct": -1.86,
+            "error_rate": -0.15,
+            "queue_depth_pct": -2.3
+          }
+        },
+        "telemetry_snapshot": {
+          "packet_loss_pct": 0.0,
+          "latency_ms": 18.0,
+          "jitter_ms": 0.5,
+          "utilization_pct": 35.0,
+          "error_rate": 0.0,
+          "queue_depth_pct": 10.0,
+          "congestion_index": 0.175
+        }
+      },
+      {
+        "link_id": "LINK-BR1-SW1",
+        "source_device": "BR1-R1",
+        "target_device": "BR1-SW1",
+        "link_type": "Trunk",
+        "bandwidth_mbps": 1000.0,
+        "failure_probability": 0.0,
+        "failure_predicted": false,
+        "risk_level": "LOW",
+        "health_score": 100.0,
+        "is_bridge": true,
+        "alternate_path_exists": false,
+        "alternate_path_hops": 99,
+        "risk_factors": [
+          "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+          "Zero Redundancy: No alternate path exists if link collapses"
+        ],
+        "anomaly_analysis": {
+          "is_anomaly": false,
+          "anomaly_confidence": 0.2046,
+          "raw_decision_score": 0.0579,
+          "deviant_features": [
+            {
+              "feature": "queue_depth_pct",
+              "observed": 10.0,
+              "baseline_mean": 20.41,
+              "z_score": -2.3
+            }
+          ],
+          "z_scores": {
+            "packet_loss_pct": -1.0,
+            "latency_ms": -0.5,
+            "jitter_ms": -0.42,
+            "utilization_pct": -1.86,
+            "error_rate": -0.15,
+            "queue_depth_pct": -2.3
+          }
+        },
+        "telemetry_snapshot": {
+          "packet_loss_pct": 0.0,
+          "latency_ms": 2.0,
+          "jitter_ms": 0.5,
+          "utilization_pct": 35.0,
+          "error_rate": 0.0,
+          "queue_depth_pct": 10.0,
+          "congestion_index": 0.175
+        }
+      }
+    ],
+    "top_vulnerable_devices": [
+      {
+        "device_id": "BR1-PC1",
+        "hostname": "BR1-Staff1",
+        "device_type": "PC",
+        "branch": "Branch 1 (North)",
+        "role": "Staff Workstation",
+        "health_state": "HEALTHY",
+        "risk_level": "LOW",
+        "health_score": 100.0,
+        "state_probabilities": {
+          "HEALTHY": 1.0,
+          "WARNING": 0.0,
+          "CRITICAL": 0.0
+        },
+        "is_articulation_point": false,
+        "blast_radius_potential": 0,
+        "predicted_blast_radius": 0,
+        "risk_factors": [],
+        "telemetry_snapshot": {
+          "cpu_pct": 25.0,
+          "mem_pct": 35.0,
+          "temperature_c": 38.0,
+          "interface_error_count": 0.0,
+          "buffer_utilization_pct": 12.0,
+          "device_stress_score": 0.216
+        }
+      },
+      {
+        "device_id": "BR1-PC2",
+        "hostname": "BR1-Staff2",
+        "device_type": "PC",
+        "branch": "Branch 1 (North)",
+        "role": "Operations IoT Terminal",
+        "health_state": "HEALTHY",
+        "risk_level": "LOW",
+        "health_score": 100.0,
+        "state_probabilities": {
+          "HEALTHY": 1.0,
+          "WARNING": 0.0,
+          "CRITICAL": 0.0
+        },
+        "is_articulation_point": false,
+        "blast_radius_potential": 0,
+        "predicted_blast_radius": 0,
+        "risk_factors": [],
+        "telemetry_snapshot": {
+          "cpu_pct": 25.0,
+          "mem_pct": 35.0,
+          "temperature_c": 38.0,
+          "interface_error_count": 0.0,
+          "buffer_utilization_pct": 12.0,
+          "device_stress_score": 0.216
+        }
+      },
+      {
+        "device_id": "BR1-R1",
+        "hostname": "BR1-Router",
+        "device_type": "Router",
+        "branch": "Branch 1 (North)",
+        "role": "Branch Gateway",
+        "health_state": "HEALTHY",
+        "risk_level": "LOW",
+        "health_score": 100.0,
+        "state_probabilities": {
+          "HEALTHY": 1.0,
+          "WARNING": 0.0,
+          "CRITICAL": 0.0
+        },
+        "is_articulation_point": true,
+        "blast_radius_potential": 3,
+        "predicted_blast_radius": 0,
+        "risk_factors": [
+          "Articulation Node: Failure isolates 3 devices"
+        ],
+        "telemetry_snapshot": {
+          "cpu_pct": 25.0,
+          "mem_pct": 35.0,
+          "temperature_c": 38.0,
+          "interface_error_count": 0.0,
+          "buffer_utilization_pct": 12.0,
+          "device_stress_score": 0.216
+        }
+      }
+    ]
+  },
+  "devices": [
+    {
+      "device_id": "BR1-PC1",
+      "hostname": "BR1-Staff1",
+      "device_type": "PC",
+      "branch": "Branch 1 (North)",
+      "role": "Staff Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR1-PC2",
+      "hostname": "BR1-Staff2",
+      "device_type": "PC",
+      "branch": "Branch 1 (North)",
+      "role": "Operations IoT Terminal",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR1-R1",
+      "hostname": "BR1-Router",
+      "device_type": "Router",
+      "branch": "Branch 1 (North)",
+      "role": "Branch Gateway",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 3,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 3 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR1-SW1",
+      "hostname": "BR1-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 1 (North)",
+      "role": "Branch Access Switch",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 2,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 2 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR2-PC1",
+      "hostname": "BR2-Eng1",
+      "device_type": "PC",
+      "branch": "Branch 2 (South)",
+      "role": "Engineering Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR2-PC2",
+      "hostname": "BR2-Lab1",
+      "device_type": "PC",
+      "branch": "Branch 2 (South)",
+      "role": "R&D Testbed PC",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR2-R1",
+      "hostname": "BR2-Router",
+      "device_type": "Router",
+      "branch": "Branch 2 (South)",
+      "role": "Branch Gateway",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 3,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 3 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR2-SW1",
+      "hostname": "BR2-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 2 (South)",
+      "role": "Branch Access Switch",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 2,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 2 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR3-PC1",
+      "hostname": "BR3-Sales1",
+      "device_type": "PC",
+      "branch": "Branch 3 (East)",
+      "role": "Sales Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR3-PC2",
+      "hostname": "BR3-Mkt1",
+      "device_type": "PC",
+      "branch": "Branch 3 (East)",
+      "role": "Marketing Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR3-R1",
+      "hostname": "BR3-Router",
+      "device_type": "Router",
+      "branch": "Branch 3 (East)",
+      "role": "Branch Gateway",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 3,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 3 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR3-SW1",
+      "hostname": "BR3-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 3 (East)",
+      "role": "Branch Access Switch",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 2,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 2 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR4-PC1",
+      "hostname": "BR4-Log1",
+      "device_type": "PC",
+      "branch": "Branch 4 (West)",
+      "role": "Logistics Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR4-PC2",
+      "hostname": "BR4-Supp1",
+      "device_type": "PC",
+      "branch": "Branch 4 (West)",
+      "role": "Support Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR4-R1",
+      "hostname": "BR4-Router",
+      "device_type": "Router",
+      "branch": "Branch 4 (West)",
+      "role": "Branch Gateway",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 3,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 3 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR4-SW1",
+      "hostname": "BR4-Switch",
+      "device_type": "Switch",
+      "branch": "Branch 4 (West)",
+      "role": "Branch Access Switch",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 2,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 2 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "HQ-PC1",
+      "hostname": "HQ-AdminPC",
+      "device_type": "PC",
+      "branch": "Headquarters",
+      "role": "IT Admin Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "HQ-PC2",
+      "hostname": "HQ-OpsPC",
+      "device_type": "PC",
+      "branch": "Headquarters",
+      "role": "Corporate Operations PC",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "HQ-R1",
+      "hostname": "HQ-Router",
+      "device_type": "Router",
+      "branch": "Headquarters",
+      "role": "Core Gateway",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 5,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 5 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "HQ-SRV1",
+      "hostname": "HQ-DNS-DHCP",
+      "device_type": "Server",
+      "branch": "Headquarters",
+      "role": "Central DNS and DHCP Server",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "HQ-SRV2",
+      "hostname": "HQ-AppServer",
+      "device_type": "Server",
+      "branch": "Headquarters",
+      "role": "Web and Application Server",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "HQ-SW1",
+      "hostname": "HQ-Switch",
+      "device_type": "Switch",
+      "branch": "Headquarters",
+      "role": "Distribution Switch",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 4,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 4 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    }
+  ],
+  "links": [
+    {
+      "link_id": "LINK-BR1-PC1",
+      "source_device": "BR1-SW1",
+      "target_device": "BR1-PC1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR1-PC2",
+      "source_device": "BR1-SW1",
+      "target_device": "BR1-PC2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR1-SW1",
+      "source_device": "BR1-R1",
+      "target_device": "BR1-SW1",
+      "link_type": "Trunk",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR2-PC1",
+      "source_device": "BR2-SW1",
+      "target_device": "BR2-PC1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR2-PC2",
+      "source_device": "BR2-SW1",
+      "target_device": "BR2-PC2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR2-SW1",
+      "source_device": "BR2-R1",
+      "target_device": "BR2-SW1",
+      "link_type": "Trunk",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR3-PC1",
+      "source_device": "BR3-SW1",
+      "target_device": "BR3-PC1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR3-PC2",
+      "source_device": "BR3-SW1",
+      "target_device": "BR3-PC2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR3-SW1",
+      "source_device": "BR3-R1",
+      "target_device": "BR3-SW1",
+      "link_type": "Trunk",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR4-PC1",
+      "source_device": "BR4-SW1",
+      "target_device": "BR4-PC1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR4-PC2",
+      "source_device": "BR4-SW1",
+      "target_device": "BR4-PC2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR4-SW1",
+      "source_device": "BR4-R1",
+      "target_device": "BR4-SW1",
+      "link_type": "Trunk",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-HQ-PC1",
+      "source_device": "HQ-SW1",
+      "target_device": "HQ-PC1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-HQ-PC2",
+      "source_device": "HQ-SW1",
+      "target_device": "HQ-PC2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-HQ-SRV1",
+      "source_device": "HQ-SW1",
+      "target_device": "HQ-SRV1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-HQ-SRV2",
+      "source_device": "HQ-SW1",
+      "target_device": "HQ-SRV2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-HQ-SW1",
+      "source_device": "HQ-R1",
+      "target_device": "HQ-SW1",
+      "link_type": "Trunk",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-BR1-BR2",
+      "source_device": "BR1-R1",
+      "target_device": "BR2-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-BR2-BR3",
+      "source_device": "BR2-R1",
+      "target_device": "BR3-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1544.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-BR3-BR4",
+      "source_device": "BR3-R1",
+      "target_device": "BR4-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-HQ-BR1",
+      "source_device": "HQ-R1",
+      "target_device": "BR1-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-HQ-BR2",
+      "source_device": "HQ-R1",
+      "target_device": "BR2-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-HQ-BR3",
+      "source_device": "HQ-R1",
+      "target_device": "BR3-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1544.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "WAN-HQ-BR4",
+      "source_device": "HQ-R1",
+      "target_device": "BR4-R1",
+      "link_type": "WAN",
+      "bandwidth_mbps": 1544.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": false,
+      "alternate_path_exists": true,
+      "alternate_path_hops": 2,
+      "risk_factors": [],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    }
+  ],
+  "top_vulnerable_links": [
+    {
+      "link_id": "LINK-BR1-PC1",
+      "source_device": "BR1-SW1",
+      "target_device": "BR1-PC1",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR1-PC2",
+      "source_device": "BR1-SW1",
+      "target_device": "BR1-PC2",
+      "link_type": "Access",
+      "bandwidth_mbps": 100.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.3142,
+        "raw_decision_score": 0.0086,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": 0.9,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 18.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    },
+    {
+      "link_id": "LINK-BR1-SW1",
+      "source_device": "BR1-R1",
+      "target_device": "BR1-SW1",
+      "link_type": "Trunk",
+      "bandwidth_mbps": 1000.0,
+      "failure_probability": 0.0,
+      "failure_predicted": false,
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "is_bridge": true,
+      "alternate_path_exists": false,
+      "alternate_path_hops": 99,
+      "risk_factors": [
+        "Single Point of Failure: Link is a topological bridge (loss partitions network)",
+        "Zero Redundancy: No alternate path exists if link collapses"
+      ],
+      "anomaly_analysis": {
+        "is_anomaly": false,
+        "anomaly_confidence": 0.2046,
+        "raw_decision_score": 0.0579,
+        "deviant_features": [
+          {
+            "feature": "queue_depth_pct",
+            "observed": 10.0,
+            "baseline_mean": 20.41,
+            "z_score": -2.3
+          }
+        ],
+        "z_scores": {
+          "packet_loss_pct": -1.0,
+          "latency_ms": -0.5,
+          "jitter_ms": -0.42,
+          "utilization_pct": -1.86,
+          "error_rate": -0.15,
+          "queue_depth_pct": -2.3
+        }
+      },
+      "telemetry_snapshot": {
+        "packet_loss_pct": 0.0,
+        "latency_ms": 2.0,
+        "jitter_ms": 0.5,
+        "utilization_pct": 35.0,
+        "error_rate": 0.0,
+        "queue_depth_pct": 10.0,
+        "congestion_index": 0.175
+      }
+    }
+  ],
+  "top_vulnerable_devices": [
+    {
+      "device_id": "BR1-PC1",
+      "hostname": "BR1-Staff1",
+      "device_type": "PC",
+      "branch": "Branch 1 (North)",
+      "role": "Staff Workstation",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR1-PC2",
+      "hostname": "BR1-Staff2",
+      "device_type": "PC",
+      "branch": "Branch 1 (North)",
+      "role": "Operations IoT Terminal",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": false,
+      "blast_radius_potential": 0,
+      "predicted_blast_radius": 0,
+      "risk_factors": [],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    },
+    {
+      "device_id": "BR1-R1",
+      "hostname": "BR1-Router",
+      "device_type": "Router",
+      "branch": "Branch 1 (North)",
+      "role": "Branch Gateway",
+      "health_state": "HEALTHY",
+      "risk_level": "LOW",
+      "health_score": 100.0,
+      "state_probabilities": {
+        "HEALTHY": 1.0,
+        "WARNING": 0.0,
+        "CRITICAL": 0.0
+      },
+      "is_articulation_point": true,
+      "blast_radius_potential": 3,
+      "predicted_blast_radius": 0,
+      "risk_factors": [
+        "Articulation Node: Failure isolates 3 devices"
+      ],
+      "telemetry_snapshot": {
+        "cpu_pct": 25.0,
+        "mem_pct": 35.0,
+        "temperature_c": 38.0,
+        "interface_error_count": 0.0,
+        "buffer_utilization_pct": 12.0,
+        "device_stress_score": 0.216
+      }
+    }
+  ]
+}
